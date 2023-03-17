@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -masm=intel .c -o .S
+gcc -S -masm=intel .c -o .s
