@@ -1,0 +1,16 @@
+#include "main.h"
+
+/**
+ * mul - a function that checks for a digit (0 through 9)
+ * @a: character to be added
+ * @b: character to be added
+ * Return: 1 if its a digit and  0 if otherwise
+ */
+int mul(int a, int b)
+{
+	int sum;
+
+	sum = a + b;
+
+	return (sum);
+}
