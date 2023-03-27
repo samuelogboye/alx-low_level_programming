@@ -1,0 +1,1 @@
+This directory contains all C programs relating to Pointers, Arrays and Strings
