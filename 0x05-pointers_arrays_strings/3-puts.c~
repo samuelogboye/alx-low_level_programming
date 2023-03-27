@@ -1,0 +1,16 @@
+#include "main.h"
+
+/**
+ * _puts - a function that prints string
+ * @str: input
+ * Return: 0 Success
+ */
+void _puts(char *str)
+{
+	int c = 0;
+
+	while (str(c))
+		c++;
+	_putchar(str, c);
+	_putchar('\n')
+}
