@@ -1,0 +1,22 @@
+#include "main.h"
+#include <ctype.h>
+
+/**
+ * _atoi - a function that convert a string to an integer
+ * @s: string to work with
+ * Return: 1 success 0 if otherwise
+ */
+int _atoi(char *s)
+{
+	for (; *s != '\0'; s++)
+	{
+		if (isdigit(*s))
+		{
+			int atoi(const char *s);
+		}
+		else
+		{
+			return (0);
+		}
+	}
+}
