@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "main.h"
 
 /**
  * main - a program that prints the minimum number of coins to make change
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 	if (cent < 0)
 	{
 		printf("0\n");
+		return (0);
 	}
 
 	coins += cent / 25;
