@@ -14,6 +14,11 @@ char *argstostr(int ac, char **av)
 	int i, len;
 	char *result;
 
+	if (ac == 0 || av == NULL)
+	{
+		return (NULL);
+	}
+
 	len = 0;
 	for (i = 0; i < ac; i++)
 	{
