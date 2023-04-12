@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 int count_words(char *str);
 int word_len(char *str);
@@ -10,8 +11,8 @@ int word_len(char *str);
  */
 char **strtow(char *str)
 {
-	int i, j, k, n_words, len;
-	char **words;
+	char **words = NULL;
+	int i = 0, j = 0, n_words = 0, len = 0;
 
 	if (str == NULL || *str == '\0')
 	{
@@ -30,26 +31,34 @@ char **strtow(char *str)
 		return (NULL);
 	}
 
-	i = 0;
 	while (*str)
 	{
-		while (*str == ' ')
+		while (*str && *str == ' ')
+		{
 			str++;
+		}
 
 		len = word_len(str);
 		words[i] = malloc((len + 1) * sizeof(char));
 		if (words[i] == NULL)
 		{
+			for (j = 0; j < i; j++)
+			{
+				free(words[j]);
+			}
+			free(words);
 			return (NULL);
 		}
 
-		for (j = 0, k = 0; j < len; j++, str++, k++)
-			words[i][k] = *str;
-		words[i][k] = '\0';
+		for (j = 0; j < len; j++, str++)
+		{
+			words[i][j] = *str;
+		}
+		words[i][j] = '\0';
 		i++;
 	}
-	words[i] = NULL;
 
+	words[i] = NULL;
 	return (words);
 }
 
@@ -65,9 +74,17 @@ int count_words(char *str)
 	while (*str)
 	{
 		if (*str != ' ')
+		{
 			count++;
-		while (*str && *str != ' ')
+			while (*str && *str != ' ')
+			{
+				str++;
+			}
+		}
+		else
+		{
 			str++;
+		}
 	}
 
 	return (count);
