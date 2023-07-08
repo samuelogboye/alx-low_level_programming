@@ -30,6 +30,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 
+	if (new_node->key == NULL)
+	{
+		free(new_node);
+		return(0);
+	}
 	/* Handle collision, add new node at the begining of the linked list */
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
