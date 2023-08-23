@@ -2,17 +2,17 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
+RM = rm
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 # Delete Emacs and Vim temporary files along with the executable
 clean:
-	rm -f *~
+	$(RM) -f *~
 
 # Delete object files
 oclean:
-	rm -f $(OBJ)
+	$(RM) -f $(OBJ)
 
 # Delete Emacs and Vim temporary files, the executable, and object files
 fclean: clean oclean
